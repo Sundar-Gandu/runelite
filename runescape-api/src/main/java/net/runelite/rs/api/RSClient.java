@@ -650,6 +650,9 @@ public interface RSClient extends RSGameEngine, Client
 	boolean[] getPressedKeys();
 
 	@Import("isLowDetail")
+	boolean isLowMemory();
+
+	@Import("isLowDetail")
 	void setLowMemory(boolean lowMemory);
 
 	@Import("Scene_isLowDetail")
@@ -960,6 +963,9 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("Scene_plane")
 	void setScenePlane(int scenePlane);
 
+	@Import("Scene_plane")
+	int getScenePlane();
+
 	@Import("Scene_cameraXTileMin")
 	void setMinTileX(int i);
 
@@ -1200,6 +1206,9 @@ public interface RSClient extends RSGameEngine, Client
 
 	@Import("VarpDefinition_get")
 	RSVarpDefinition getVarpDefinition(int id);
+
+	@Construct
+	RSFloorOverlayDefinition newFloorOverlayDefinition();
 
 	@Construct
 	RSTileItem newTileItem();
@@ -1499,6 +1508,9 @@ public interface RSClient extends RSGameEngine, Client
 
 	@Import("FloorUnderlayDefinition_cached")
 	RSEvictingDualNodeHashTable getFloorUnderlayDefinitionCache();
+
+	@Import("FloorOverlayDefinition_archive")
+	RSAbstractArchive getFloorOverlayDefinitionArchive();
 
 	@Import("FloorOverlayDefinition_cached")
 	RSEvictingDualNodeHashTable getFloorOverlayDefinitionCache();
