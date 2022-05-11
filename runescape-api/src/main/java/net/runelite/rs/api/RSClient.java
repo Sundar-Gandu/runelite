@@ -287,6 +287,9 @@ public interface RSClient extends RSGameEngine, Client
 	@Override
 	void setOtp(String otp);
 
+	@Import("xPadding")
+	int getLoginScreenXPadding();
+
 	@Import("currentLoginField")
 	@Override
 	int getCurrentLoginField();
@@ -639,6 +642,18 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("MouseHandler_idleCycles")
 	@Override
 	void setMouseIdleTicks(int cycles);
+
+	@Import("MouseHandler_lastPressedX")
+	int getMouseLastPressedX();
+
+	@Import("MouseHandler_lastPressedX")
+	void setMouseLastPressedX(int x);
+
+	@Import("MouseHandler_lastPressedY")
+	int getMouseLastPressedY();
+
+	@Import("MouseHandler_lastPressedY")
+	void setMouseLastPressedY(int y);
 
 	@Import("MouseHandler_lastPressedTimeMillis")
 	@Override
@@ -1351,6 +1366,12 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("meslayerContinueWidget")
 	Widget getMessageContinueWidget();
 
+	@Import("playingJingle")
+	boolean isPlayingJingle();
+
+	@Import("musicTrackGroupId")
+	int getMusicCurrentTrackId();
+
 	@Import("musicPlayerStatus")
 	void setMusicPlayerStatus(int var0);
 
@@ -1563,6 +1584,9 @@ public interface RSClient extends RSGameEngine, Client
 
 	@Import("ObjectDefinition_cached")
 	RSEvictingDualNodeHashTable getObjectDefinitionCache();
+
+	@Import("ObjectDefinition_cached")
+	RSEvictingDualNodeHashTable getObjectCompositionCache();
 
 	@Import("ObjectDefinition_cachedModelData")
 	RSEvictingDualNodeHashTable getObjectDefinitionModelDataCache();
