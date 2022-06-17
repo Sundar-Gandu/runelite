@@ -4,11 +4,8 @@ import net.runelite.api.MenuAction;
 import net.runelite.api.MenuEntry;
 import net.runelite.api.NPC;
 import net.runelite.api.Player;
-import net.runelite.api.events.NpcSpawned;
 import net.runelite.api.widgets.Widget;
 import net.runelite.rs.api.RSClient;
-import net.runelite.rs.api.RSNPC;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class RuneLiteMenuEntry implements MenuEntry
 {
@@ -473,7 +470,8 @@ public class RuneLiteMenuEntry implements MenuEntry
 			menuAction == MenuAction.NPC_THIRD_OPTION ||
 			menuAction == MenuAction.NPC_FOURTH_OPTION ||
 			menuAction == MenuAction.NPC_FIFTH_OPTION ||
-			menuAction == MenuAction.WIDGET_TARGET_ON_NPC)
+			menuAction == MenuAction.WIDGET_TARGET_ON_NPC ||
+			menuAction == MenuAction.EXAMINE_NPC)
 		{
 			int identifier = this.getIdentifier();
 
